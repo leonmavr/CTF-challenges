@@ -10,7 +10,7 @@ temporarily run the program as its owner, which may lead to exploits.
 ###Solution
 The objective is clear. Search the filesystem for a file with SUID permissions.  
 Therefore:  
-find in the filesystem \
+find in the filesystem \  
 a file \  
 with SUID permissions \  
 throw error in /dev/null \  
