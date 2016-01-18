@@ -7,7 +7,7 @@ indicated by `S` (intead of r/w/x). When it is set, it allows the user to
 temporarily run the program as its owner, which may lead to exploits.  
 *A hint from the instrutions: consult the find command manual.*  
   
-###Solutions
+###Solution
 The objective is clear. Search the filesystem for a file with SUID permissions.  
 Therefore:  
 find in the filesystem \
