@@ -55,11 +55,11 @@ Of course ```eax``` needs to be modified to the latter value. If the registers a
   
 Repeat the process 3 more times, stopping only at the second breakpoint to adjust ```eax```. Each time, write down the value at ```ebp + edx*4 + var_18h```.  
    <p align="center">
-  <img src=hhttps://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App05img/image004.jpg  title="img_04" width=60%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App05img/image004.jpg  title="img_04" width=60%>
 </p>    
 After the fourth iteration, the program exits. Recall the little endianess of Intel processors and observe each byte contained from ```var_C``` to ```var_18```. Do they form a pattern?  
   <p align="center">
-  <img src=hhttps://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App05img/image005.png  title="img_05" width=30%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App05img/image005.png  title="img_05" width=30%>
 </p>    
   
   *Hint*: If a series of bytes reminds you of an Iron Maiden song title, you got it right ;)
