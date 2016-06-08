@@ -46,16 +46,16 @@ Set breakpoints at:
 ```
 Start debugging (F9). Type a random password. When the second breakpoint is reached for the first time, edx equals 3. Therefore ```ebp+edx*4+var_18 = ebp – Ch```,. By hovering the mouse over the expression (at ```004010C3```), IDA tells us that this points to ```var_C```, whose value is ```65776F70h```.  
    <p align="center">
-  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App05img/image002.png  title="img_02" width=60%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App05img/image002.jpg  title="img_02" width=60%>
 </p>    
 Of course ```eax``` needs to be modified to the latter value. If the registers are not visible, go to ```Debugger > General registers```,  right click on ```eax```, and modify it with the right value.    
  <p align="center">
-  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App05img/image003.png  title="img_03" width=40%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App05img/image003.jpg  title="img_03" width=40%>
 </p>    
   
 Repeat the process 3 more times, stopping only at the second breakpoint to adjust ```eax```. Each time, write down the value at ```ebp + edx*4 + var_18h```.  
    <p align="center">
-  <img src=hhttps://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App05img/image004.png  title="img_04" width=60%>
+  <img src=hhttps://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App05img/image004.jpg  title="img_04" width=60%>
 </p>    
 After the fourth iteration, the program exits. Recall the little endianess of Intel processors and observe each byte contained from ```var_C``` to ```var_18```. Do they form a pattern?  
   <p align="center">
