@@ -72,7 +72,7 @@ Each needs to be incremented by 100. From IDA, view the hexdump and jump to the 
 ```
 And change the values they contain (an ASCII chart might come in handy):  
 <p align="center">
-  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App09img/image004.jpgtitle="img_04" width=72%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App09img/image004.jpg title="img_04" width=72%>
 </p>    
 When done changing the values, save the changes to a new .dif file. 
 ```
