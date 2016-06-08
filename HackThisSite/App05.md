@@ -8,7 +8,7 @@ If we run the application, a password prompt appears and as soon as a wrong pass
 Open it up with IDA by the default settings.  
 The following section reads input from the user.  
 <p align="center">
-  <img src=https://github.com/0xLeo/HackThisSite/blob/master/App05img/image001.png title="img_01" width=50%>
+  <img src=https://github.com/0xLeo/CTF-challenges/tree/master/HackThisSite/App05img/image001.png title="img_01" width=50%>
 </p>  
 ```var_4``` reads the current character and ```var_1C``` reads the length of the input string (number of chars + 1). ```var_4``` is renamed to ```inputChar``` and ```var_1C``` is renamed to ```inputLen```:  
 
