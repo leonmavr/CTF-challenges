@@ -6,17 +6,17 @@
 
 By running the .exe, the following screen pops up.  
 <p align="center">
-  <img src=https://github.com/0xLeo/HackThisSite/blob/master/App09img/image001.jpg title="img_01" width=40%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App09img/image001.jpg title="img_01" width=40%>
 </p>  
 The play button plays a continuous beep of three characteristic tones. Each match button plays another, beep of a slightly different tone. So let’s find out the frequencies of these beeps.  
 Record all beeps in a wav file – I suggest one for the play button and one for buttons 1,2,3. When done recording them their exact frequencies need to be found.  
 This can be achieved e.g. by FFT analysis using an audio editor such as WavePad Sound Editor on Windows or manually. For example in Matlab/ Octave, the sampled waveform of the play button in time domain looks as follows:  
 <p align="center">
-  <img src=https://github.com/0xLeo/HackThisSite/blob/master/App09img/image002.jpg title="img_02" width=60%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App09img/image002.jpg title="img_02" width=60%>
 </p>   
 Zoom in and notice each “rectangle” consists of repetitions of a single sinusoid.  
 <p align="center">
-  <img src=https://github.com/0xLeo/HackThisSite/blob/master/App09img/image003.jpg title="img_03" width=60%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App09img/image003.jpg title="img_03" width=60%>
 </p>  
 Given the width of half its cycle (in sample indices, from two successive zero crossings), its frequency is found. Details in App09.m. The result is that the frequencies of buttons 1,2,3 are offset by +100 from play button’s.  
 Disassemble the program with IDA Pro and the following snippet is found in the text segment:  
@@ -72,7 +72,7 @@ Each needs to be incremented by 100. From IDA, view the hexdump and jump to the 
 ```
 And change the values they contain (an ASCII chart might come in handy):  
 <p align="center">
-  <img src=https://github.com/0xLeo/HackThisSite/blob/master/App09img/image004.jpg title="img_04" width=72%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App09img/image004.jpgtitle="img_04" width=72%>
 </p>    
 When done changing the values, save the changes to a new .dif file. 
 ```
@@ -86,9 +86,9 @@ Open the .dif file a text editor. It simply contains the changed bytes.
 ```
 Now all we need to do is apply the patch to the executable. The .c program found [here](http://pastebin.com/pe6DPJ73) ( (C) copyright Chris Eagle cseagle at gmail.com) does this job. Open up the command line and pass the patch and the executable as arguments:  
 <p align="center">
-  <img src=https://github.com/0xLeo/HackThisSite/blob/master/App09img/image005.png title="img_05" width=75%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App09img/image005.png title="img_05" width=75%>
 </p>    
 Open the new executable and it’s cracked :)  
 <p align="center">
-  <img src=https://github.com/0xLeo/HackThisSite/blob/master/App09img/image006.jpg title="img_06" width=40%>
+  <img src=https://github.com/0xLeo/CTF-challenges/blob/master/HackThisSite/App09img/image006.jpg title="img_06" width=40%>
 </p>  
